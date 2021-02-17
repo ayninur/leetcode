@@ -4,3 +4,23 @@
 
 // You may assume that each input would have exactly one solution and you may not use the same element twice.
 
+/**
+ * @param {number[]} numbers
+ * @param {number} target
+ * @return {number[]}
+ */
+var twoSum = function (numbers, target) {
+    let left = 0;
+    let right = numbers.length - 1;
+    while (left < right) {
+        let cum = numbers[left] + numbers[right];
+        if (cum < target) {
+            left++
+        } else if (cum > target) {
+            right--
+        } else if (cum === target) {
+            return [left + 1, right + 1]
+        }
+    }
+
+};
